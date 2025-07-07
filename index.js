@@ -23,6 +23,7 @@ const car = (e) => {
 const setCar = (objeto) => {
     const productos = {
         id: objeto.querySelector('.btn').dataset.id,
+        image: objeto.querySelector('.card-img-top').getAttribute('src'),
         title: objeto.querySelector('h5').textContent,
         valor: objeto.querySelector('.number').textContent,
         cantidad: 1
@@ -30,6 +31,7 @@ const setCar = (objeto) => {
 
     if(arrCarrito.hasOwnProperty(productos.id)){
         productos.cantidad = arrCarrito[productos.id].cantidad + 1
+        productos.valor = productos.cantidad * productos.valor
     }
 
     arrCarrito[productos.id] = {...productos}
@@ -83,6 +85,6 @@ const pintarCard = (data) => {
 }
 
 const pintarCar = () => {
-    const carItems = Object.values(arrCarrito).map((carItem => `<div> ${carItem.title} <br /> %{carItem.valor} <br /> ${carItem.cantidad}</div>`)).join(' ')
+    const carItems = Object.values(arrCarrito).map((carItem => `<div> ${carItem.title} <br /> ${carItem.valor} <br /> ${carItem.cantidad}</div>`)).join(' ')
     containerCar.innerHTML = carItems
 }
