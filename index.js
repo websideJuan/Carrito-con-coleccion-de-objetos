@@ -23,7 +23,7 @@ const car = (e) => {
 const setCar = (objeto) => {
     const productos = {
         id: objeto.querySelector('.btn').dataset.id,
-        image: objeto.querySelector('.card-img-top').getAttribute('src'),
+        image: objeto.querySelector('img').getAttribute('src'),
         title: objeto.querySelector('h5').textContent,
         valor: objeto.querySelector('.number').textContent,
         cantidad: 1
