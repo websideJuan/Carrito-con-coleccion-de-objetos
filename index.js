@@ -21,8 +21,7 @@ const car = (e) => {
 }
 
 const setCar = (objeto) => {
-    console.log(objeto)
-    const imagen = objeto.querySelector('img')
+    const imagen = objeto.parentElement.querySelector('img')
     
     const productos = {
         id: objeto.querySelector('.btn').dataset.id,
