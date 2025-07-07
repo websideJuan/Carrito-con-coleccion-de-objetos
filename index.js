@@ -83,6 +83,6 @@ const pintarCard = (data) => {
 }
 
 const pintarCar = () => {
-    const carItems = Object.values(arrCarrito).map((carItem => `<div> ${carItem.title} <br /> %{carItem.valor} <br /> ${carItem.cantidad}</div>`).join(' '))
+    const carItems = Object.values(arrCarrito).map((carItem => `<div> ${carItem.title} <br /> %{carItem.valor} <br /> ${carItem.cantidad}</div>`)).join(' ')
     containerCar.innerHTML = carItems
 }
