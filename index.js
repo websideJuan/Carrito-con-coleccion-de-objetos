@@ -66,7 +66,7 @@ const dataFunction = async () => {
     }
 }
 
-const pintarCar = (data) => {
+const pintarCard = (data) => {
     console.log(data.slice(data.id, 4))
     data.forEach(items => {
         temaplateCard.querySelector('img').setAttribute('src', items.imgUrl)
@@ -80,4 +80,9 @@ const pintarCar = (data) => {
         fragment.appendChild(clone)
     })
     cardTemplate.appendChild(fragment)
+}
+
+const pintarCar = () => {
+    const carItems = Object.values(arrCarrito).map((carItem => `<div> ${carItem.title} <br /> %{carItem.valor} <br /> ${carItem.cantidad}</div>`).join(' '))
+    containerCar.innerHTML = carItems
 }
