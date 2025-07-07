@@ -38,15 +38,6 @@ const setCar = (objeto) => {
 
     arrCarrito[productos.id] = {...productos}
 
-
-    console.log(arrCarrito)
-
-    // const validationArr = arrCarrito.indexOf(arrCarrito.length === -1)
-
-    // if(validationArr){
-    //     arrCarrito.push(productos)
-    // }
-
     pintarCar(arrCarrito)
 }
 
@@ -71,7 +62,6 @@ const dataFunction = async () => {
 }
 
 const pintarCard = (data) => {
-    console.log(data.slice(data.id, 4))
     data.forEach(items => {
         temaplateCard.querySelector('img').setAttribute('src', items.imgUrl)
         temaplateCard.querySelector('.card-title').textContent = items.title
